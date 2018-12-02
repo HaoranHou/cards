@@ -85,13 +85,18 @@ public class Table {
         Player player1 = players.get(0);
         Player player2 = players.get(1);
 
-        if (player1.isBroke()) {
-            return player2;
-        } else if (player2.isBroke()) {
-            return player1;
-        } else {
+        if(player1.isBroke() && player2.isBroke()) {
             return null;
         }
+
+        if (player1.isBroke()) {
+            return player2;
+        }
+
+        if (player2.isBroke()) {
+            return player1;
+        }
+        return null;
     }
 
     public void dealOneCardForEachPlayer() {

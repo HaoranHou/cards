@@ -37,7 +37,7 @@ public class Player {
     }
 
     public boolean isBroke() {
-        return this.chips <= 0;
+        return this.chips < 5;
     }
 
     public Move betOnSmaller() {
