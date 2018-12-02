@@ -1,4 +1,4 @@
-package core.objects;
+package objects;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

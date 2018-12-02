@@ -1,10 +1,10 @@
-package service;
+package game;
 
 
+import game.util.Table;
+import game.util.Player;
 import org.apache.commons.lang3.StringUtils;
-import service.AI.Bot;
-import service.util.Player;
-import service.util.Table;
+import game.AI.Bot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,10 +22,11 @@ public class Play {
         System.out.println("1. Choose number of sets of cards you want to play with. To ensure a speedy game, please pick a smaller number, like 1.");
         System.out.println("2. Choose number of chips you want to start with. To ensure a speedy game, please pick a smaller number, like $20.");
         System.out.println("3. For each round, both you and your opponent will be dealt with one card. Both of you need to bet $5 on if your card face value is smaller or larger than your opponents'.");
-        System.out.println("4. If one of you wins, the winner will win $5. If both of you wins you will not lose the chips;");
+        System.out.println("4. Ace is 1, Jack is 11, Queen is 12, King is 13, the other cards equals their face value.");
+        System.out.println("5. If one of you wins, the winner will win $5. If both of you wins you will not lose the chips;");
         System.out.println("but if both of you loses both of you will lose chips.");
-        System.out.println("5. The game ends when one of the players loses all the chips, or the cards run out.");
-        System.out.println("6. The player with more chips wins.");
+        System.out.println("6. The game ends when one of the players loses all the chips, or the cards run out.");
+        System.out.println("7. The player with more chips wins.");
         Scanner keyboard = new Scanner(System.in);
         String playerName;
         List<String> names = new ArrayList<>();

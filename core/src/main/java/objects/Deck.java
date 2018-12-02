@@ -1,4 +1,4 @@
-package core.objects;
+package objects;
 
 import org.apache.commons.collections4.CollectionUtils;
 

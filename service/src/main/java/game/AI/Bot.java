@@ -1,9 +1,9 @@
-package service.AI;
+package game.AI;
 
-import core.objects.Card;
-import core.objects.Deck;
-import service.util.Move;
-import service.util.Player;
+import game.util.Move;
+import objects.Card;
+import objects.Deck;
+import game.util.Player;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,6 +34,7 @@ public class Bot {
         }
     }
 
+    //Given the input card, update the number of cards smaller than itself in the deck.
     public void considerUsedCards(Card card) {
         int cardValue = cardValueMap.get(card);
         cardsLeft--;
@@ -42,6 +43,8 @@ public class Bot {
         }
     }
 
+    //Check the number of cards smaller or larger than the card in hand in the deck.
+    //If more smaller cards bet on larger, and vice versa.
     public Move makeADecision() {
         int cardValue = cardValueMap.get(this.player.getCard());
         int smallerCards = cardsSmallerThanValue.get(cardValue);

@@ -1,4 +1,4 @@
-package core.objects;
+package objects;
 
 public enum FaceValue {
     ACE,

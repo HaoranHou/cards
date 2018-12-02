@@ -1,7 +1,7 @@
-package service.util;
+package game.util;
 
-import core.objects.Card;
-import core.objects.Deck;
+import objects.Card;
+import objects.Deck;
 import lombok.Getter;
 
 import java.util.HashMap;

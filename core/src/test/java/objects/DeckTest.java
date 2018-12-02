@@ -1,4 +1,4 @@
-package core.objects;
+package objects;
 
 import org.hamcrest.core.IsCollectionContaining;
 import org.junit.Test;
@@ -13,7 +13,6 @@ import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
-import static org.hamcrest.number.OrderingComparison.greaterThan;
 import static org.hamcrest.number.OrderingComparison.lessThan;
 
 public class DeckTest {
@@ -41,8 +40,9 @@ public class DeckTest {
 
     //Get 5 random numbers from (1, 52) as indexes.
     //Create and shuffle a deck 5200 times, check the card at the index from each deck and save the frequencies of the card.
-    //If the deck is truly randomly shuffled, the frequencies of each card that appear at the index should be normally
-    //distributed with mean equals to 100.
+    //If the deck is truly randomly shuffled, all 52 cards should have appeared at each index,
+    //and the frequencies of each card that appear at the index should be normally
+    //distributed with mean equals to 100 (5200 / 52).
     @Test
     public void testShuffle() {
         Set<Integer> indexes = new HashSet<>();
@@ -67,7 +67,7 @@ public class DeckTest {
         for (Map.Entry<Integer, Map<Card, Integer>> entries : cardFrequencies.entrySet()) {
             assertThat(entries.getValue().size(), equalTo(52));
             for (Map.Entry<Card, Integer> frequencies : entries.getValue().entrySet()) {
-                assertThat(Math.abs(frequencies.getValue()-100), is(lessThan(40)));
+                assertThat(Math.abs(frequencies.getValue() - 100), is(lessThan(40)));
             }
         }
     }

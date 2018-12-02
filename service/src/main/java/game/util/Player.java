@@ -1,7 +1,7 @@
-package service.util;
+package game.util;
 
 
-import core.objects.Card;
+import objects.Card;
 import lombok.Getter;
 
 
@@ -37,7 +37,7 @@ public class Player {
     }
 
     public boolean isBroke() {
-        return this.chips == 0;
+        return this.chips <= 0;
     }
 
     public Move betOnSmaller() {

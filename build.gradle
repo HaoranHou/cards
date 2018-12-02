@@ -1,5 +1,6 @@
 description = """deck of cards"""
 apply plugin: 'java'
+apply plugin: 'application'
 
 allprojects {
     group 'haoran'
@@ -7,13 +8,26 @@ allprojects {
 
     repositories {
         mavenCentral()
+        jcenter()
     }
-    
+}
+
+dependencies {
+    compile project(":service")
 }
 
 subprojects {
     apply plugin: 'java'
     sourceCompatibility = 1.8
+}
+
+task uberjar(type: Jar) {
+    from files(sourceSets.main.output.classesDir)
+    from {configurations.compile.collect { it.isDirectory() ? it: zipTree(it)}}
+    with jar
+    manifest {
+        attributes 'Main-Class': 'game.Play'
+    }
 }
 
 task wrapper(type: Wrapper, group: 'Build Setup') {

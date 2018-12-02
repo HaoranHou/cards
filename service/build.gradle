@@ -1,3 +1,7 @@
+apply plugin: 'application'
+
+mainClassName = 'game.Play'
+
 dependencies {
     compile project(":core")
 }
